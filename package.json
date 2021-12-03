@@ -1,0 +1,58 @@
+{
+	"name": "top-search-results",
+	"displayName": "Top Search Results",
+	"description": "Open top search results in your default browser directly from vs code!",
+	"version": "0.0.1",
+	"publisher": "gaurrajdeep",
+	"engines": {
+		"vscode": "^1.57.0"
+	},
+	"icon": "resources/icon.png",
+	"repository": {
+		"type": "git",
+		"url": "https://www.github.com/rajdeepgaur/top-search-results"
+	  },
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.topSearchResults"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"menus": {
+			"editor/context": [
+			  {
+				"when": "editorHasSelection",
+				"command": "extension.topSearchResults",
+				"group": "navigation"
+			  }
+			]
+		  },
+		"commands": [
+			{
+				"command": "extension.topSearchResults",
+				"title": "Open top search results"
+			}
+		]
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.57.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.2.2",
+		"@types/node": "14.x",
+		"eslint": "^7.27.0",
+		"glob": "^7.1.7",
+		"mocha": "^8.4.0",
+		"typescript": "^4.3.2",
+		"vscode-test": "^1.5.2"
+	},
+	"dependencies": {
+		"axios": "^0.21.1"
+	}
+}
